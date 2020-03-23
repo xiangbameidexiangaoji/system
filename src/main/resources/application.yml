@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost/oa?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC&allowPublicKeyRetrieval=true&verifyServerCertificate=false&useSSL=false
+      username: root
+      password: root
+      max-active: 50
+      min-idle: 10
+      initial-size: 10
+      max-wait: 6000
