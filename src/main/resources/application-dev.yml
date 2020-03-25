@@ -9,3 +9,9 @@ spring:
       min-idle: 10
       initial-size: 10
       max-wait: 6000
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+server:
+  port: 8081
