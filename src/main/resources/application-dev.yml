@@ -9,9 +9,15 @@ spring:
       min-idle: 10
       initial-size: 10
       max-wait: 6000
+##试图解析器
   mvc:
     view:
       prefix: /WEB-INF/jsp/
       suffix: .jsp
 server:
   port: 8081
+## jsp 热部署
+  servlet:
+    jsp:
+      init-parameters:
+        development: true
