@@ -9,6 +9,7 @@ spring:
       min-idle: 10
       initial-size: 10
       max-wait: 6000
+
 ##试图解析器
   mvc:
     view:
@@ -21,3 +22,15 @@ server:
     jsp:
       init-parameters:
         development: true
+
+# PageHelper分页插件
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+## 打印sql
+logging:
+  level:
+    com.loa.system.oasystem: debug
+
