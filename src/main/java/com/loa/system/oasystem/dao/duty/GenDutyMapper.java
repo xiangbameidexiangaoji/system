@@ -2,10 +2,13 @@ package com.loa.system.oasystem.dao.duty;
 
 import com.loa.system.oasystem.entity.duty.GenDuty;
 import com.loa.system.oasystem.entity.duty.GenDutyExample;
-import java.util.List;
+import com.loa.system.oasystem.vo.DutyVo;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
+
+import java.time.LocalDateTime;
+import java.util.List;
 
 @Repository
 @Mapper
@@ -129,4 +132,17 @@ public interface GenDutyMapper {
      * @mbg.generated
      */
     int updateByPrimaryKey(GenDuty record);
+
+    /**
+     * 查询员工考勤列表
+     * @param ename
+     * @param deptname
+     * @param localDateTime
+     * @return
+     */
+    List<DutyVo> findByDutyList(@Param("dtid") Short dtid,
+                                @Param("ename") String ename,
+                                @Param("deptname") String deptname,
+                                @Param("localDateTime") LocalDateTime localDateTime);
+
 }

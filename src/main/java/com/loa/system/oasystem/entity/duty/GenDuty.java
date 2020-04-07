@@ -1,9 +1,11 @@
 package com.loa.system.oasystem.entity.duty;
 
+import lombok.Data;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
-import lombok.Data;
 
 @Data
 public class GenDuty {
@@ -32,6 +34,7 @@ public class GenDuty {
      *
      * @mbg.generated
      */
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime dtdate;
 
     /**
@@ -41,6 +44,7 @@ public class GenDuty {
      *
      * @mbg.generated
      */
+    @DateTimeFormat(pattern = "HH:mm")
     private LocalDateTime signintime;
 
     /**
@@ -50,6 +54,7 @@ public class GenDuty {
      *
      * @mbg.generated
      */
+    @DateTimeFormat(pattern = "HH:mm")
     private LocalDateTime signouttime;
 
     /**

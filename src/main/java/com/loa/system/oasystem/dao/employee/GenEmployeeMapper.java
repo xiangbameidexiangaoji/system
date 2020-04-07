@@ -158,22 +158,27 @@ public interface GenEmployeeMapper {
     int logicalDeleteByPrimaryKey(Short empid);
 
     /**
-     * 模糊查询名字
+     * 模糊查询领导名字
      * @param ename
      * @return
      */
     List<String> findByLeaderNameLike(String ename);
 
     /**
-     *
-     * @param ename 用户名字
-     * @param deptno  部门编号
-     * @param onduty  是否在职
-     * @param hiredate 入职时间
+     * 查询员工列表
+     * @param ename
+     * @param deptno
+     * @param onduty
+     * @param localDateTime
      * @return
      */
-    List<EmployeeVo> findByEmployeeList(@Param("ename") String ename,
-                                        @Param("deptno") Short deptno,
-                                        @Param("onduty") Short onduty,
-                                        @Param("hiredate") LocalDateTime hiredate);
+    List<EmployeeVo> findByEmployeeList(String ename, Short deptno, Short onduty, LocalDateTime localDateTime);
+
+    /**
+     * 重置员工密码
+     * @param empid
+     * @param password
+     * @return
+     */
+    Integer updatePassword(@Param("empid") Short empid ,@Param("password") String password);
 }

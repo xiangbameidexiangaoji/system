@@ -10,7 +10,7 @@ import java.util.List;
  * @author 李涵林
  */
 @Data
-public class PageResult implements Serializable {
+public class PageResult<T> implements Serializable {
     /**
      * 当前页
      */
