@@ -12,7 +12,6 @@ public class ShowController {
 
     @RequestMapping("/showUser")
     public String showIndex(){
-        System.out.println("123");
         return "login";
     }
 }
