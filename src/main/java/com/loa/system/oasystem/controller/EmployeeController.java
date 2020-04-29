@@ -8,8 +8,10 @@ import com.loa.system.oasystem.vo.EmployeeVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -19,6 +21,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/employee")
 public class EmployeeController {
+
     @Autowired
     private EmployeeService employeeService;
     
@@ -50,6 +53,7 @@ public class EmployeeController {
     @GetMapping("/leaderName")
     public List<String> findByLeaderNameLike(String ename){
         List<String> leaderNameLike = this.employeeService.findByLeaderNameLike(ename);
+        CollectionUtils.isEmpty(new HashMap<>(32));
         return leaderNameLike;
     }
     

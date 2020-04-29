@@ -5,6 +5,7 @@ import com.loa.system.oasystem.util.PageResult;
 import com.loa.system.oasystem.util.Result;
 import com.loa.system.oasystem.vo.DutyVo;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,7 +23,7 @@ public class DutyController {
     @Autowired
     private DutyService dutyService;
 
-
+    @ApiOperation(value = "查询考勤列表")
     @GetMapping("/list")
     public Result findByDutyList(@RequestParam(value = "dtid",required = false) Short dtid,
                                  @RequestParam(value = "ename",required = false) String ename,

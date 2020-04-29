@@ -5,8 +5,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import java.sql.SQLException;
-
 /**
  * @author 李涵林
  */
@@ -14,16 +12,15 @@ import java.sql.SQLException;
 @RestControllerAdvice
 public class ControllerExceptionHandler {
 
-    @ExceptionHandler(value = {SQLException.class})
-    public Result handleSQLException(SQLException ex){
-        log.error(ex.getMessage(),ex);
-        return Result.build(500, ex.getMessage(), ex.getErrorCode());
-    }
-
-//    @ExceptionHandler(value = {RuntimeException.class})
-//    public Result handleRuntimeException(RuntimeException ex){
-//        log.error("运行时异常:",ex);
-//        return Result.error("运行时异常:" + ex.getMessage());
+//    @ExceptionHandler(value = {SQLException.class})
+//    public Result handleSQLException(SQLException ex){
+//        log.error(ex.getMessage(),ex);
+//        return Result.build(500, ex.getMessage(), ex.getErrorCode());
 //    }
 
+    @ExceptionHandler(value = {RuntimeException.class})
+    public Result handleRuntimeException(RuntimeException ex){
+        log.error("运行时异常:",ex);
+        return Result.error("运行时异常:" + ex.getMessage());
+    }
 }

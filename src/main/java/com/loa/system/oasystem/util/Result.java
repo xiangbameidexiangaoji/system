@@ -2,28 +2,44 @@ package com.loa.system.oasystem.util;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 
 import java.io.Serializable;
 import java.util.List;
 
 /**
  * 自定义响应模型
+ * @author 李涵林
  */
+@ApiModel(value = "响应模型")
+@Data
 public class Result implements Serializable {
-    // 定义jackson对象
+    /**
+     * 定义jackson对象
+     */
     private static final ObjectMapper MAPPER = new ObjectMapper();
 
-    // 响应业务状态
+    /**
+     * 响应业务状态
+     */
+    @ApiModelProperty(value = "响应状态码")
     private Integer status;
 
-    // 响应消息
+    /**
+     * 响应消息
+     */
+    @ApiModelProperty(value = "响应消息")
     private String msg;
 
     private static final Integer okcode=200;
     private static final Integer errorcode=500;
 
-
-    // 响应中的数据
+    /**
+     * 响应中的数据
+     */
+    @ApiModelProperty(value = "数据")
     private Object data;
 
     public static Result build(Integer status, String msg, Object data) {
@@ -41,7 +57,7 @@ public class Result implements Serializable {
     }
 
     public static Result ok() {
-        return new Result(null);
+        return new Result(okcode);
     }
 
     public Result() {
@@ -64,30 +80,6 @@ public class Result implements Serializable {
     public Result(Object data) {
         this.status = okcode;
         this.msg = "OK";
-        this.data = data;
-    }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
-
-    public Object getData() {
-        return data;
-    }
-
-    public void setData(Object data) {
         this.data = data;
     }
 

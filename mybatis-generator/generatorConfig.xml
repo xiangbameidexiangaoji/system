@@ -61,12 +61,12 @@
             <property name="useJSR310Types" value="true"/>
         </javaTypeResolver>
 
-        <javaModelGenerator targetPackage="com.loa.system.oasystem.entity.duty" targetProject="src/main/java"/>
-        <sqlMapGenerator targetPackage="com.loa.system.oasystem.dao.duty" targetProject="src/main/resources"/>
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.loa.system.oasystem.dao.duty"
+        <javaModelGenerator targetPackage="com.loa.system.oasystem.entity.rolePermission" targetProject="src/main/java"/>
+        <sqlMapGenerator targetPackage="com.loa.system.oasystem.dao.rolePermission" targetProject="src/main/resources"/>
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.loa.system.oasystem.dao.rolePermission"
                              targetProject="src/main/java"/>        <!-- 表名 -->
-        <table tableName="duty">
-            <generatedKey column="dtid" sqlStatement="MySql" identity="true"/>
+        <table tableName="admin_role_permission">
+            <!--<generatedKey column="dtid" sqlStatement="MySql" identity="true"/>-->
         </table>
     </context>
 </generatorConfiguration>
